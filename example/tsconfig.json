@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outFile": "./dist/out.js",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "experimentalDecorators": true,
+        "module": "system",
+        "target": "es6",
+        "jsx": "react"
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

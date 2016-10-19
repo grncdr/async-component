@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Hello React!</title>
+    </head>
+    <body>
+        <div id="example"></div>
+
+        <!-- Dependencies -->
+        <script src="node_modules/systemjs/dist/system.js"></script>
+        <script src="jspm.config.js"></script>
+
+        <!-- Main -->
+        <script>
+System.trace = true
+System.import('systemjs-hot-reloader').then(function(HotReloader){
+  new HotReloader.default('http://localhost:8080')  // chokidar-socket-emitter port
+});
+System.import("./src")
+        </script>
+    </body>
+</html>

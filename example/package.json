@@ -1,0 +1,113 @@
+{
+  "name": "typescript-async-load",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "jspm install"
+  },
+  "author": "Stephen Sugden <me@stephensugden.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar-socket-emitter": "^0.5.4",
+    "http-server": "^0.9.0",
+    "jspm": "^0.17.0-beta.29",
+    "jspm-local": "^1.0.2"
+  },
+  "jspm": {
+    "dependencies": {
+      "@types/react": "npm:@types/react@^0.14.41",
+      "@types/react-dom": "npm:@types/react-dom@^0.14.18",
+      "react-async-component": "local:react-async-component@1.0.0",
+      "react-dom": "npm:react-dom@^15.3.2",
+      "ts": "github:frankwallis/plugin-typescript@^5.2.7"
+    },
+    "devDependencies": {
+      "constants": "github:jspm/nodelibs-constants@^0.2.0-alpha",
+      "core-js": "npm:core-js@^1.2.0",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0",
+      "ts-runtime": "npm:babel-runtime@^5.8.24",
+      "typescript": "npm:typescript@^2.0.0",
+      "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha"
+    },
+    "peerDependencies": {
+      "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
+      "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
+      "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
+      "crypto": "github:jspm/nodelibs-crypto@^0.2.0-alpha",
+      "domain": "github:jspm/nodelibs-domain@^0.2.0-alpha",
+      "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
+      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
+      "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
+      "https": "github:jspm/nodelibs-https@^0.2.0-alpha",
+      "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
+      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "react": "npm:react@^15.3.2",
+      "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
+      "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
+      "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
+      "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
+      "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
+    },
+    "overrides": {
+      "github:socketio/socket.io-client@1.5.0": {
+        "main": "socket.io.js"
+      },
+      "npm:babel-runtime@5.8.38": {
+        "main": false,
+        "dependencies": {},
+        "optionalDependencies": {
+          "core-js": "^1.2.0"
+        }
+      },
+      "npm:browserify-zlib@0.1.4": {
+        "dependencies": {
+          "readable-stream": "^2.0.2",
+          "pako": "~0.2.0"
+        },
+        "map": {
+          "_stream_transform": "readable-stream/transform"
+        }
+      },
+      "npm:debug@2.2.0": {
+        "main": "browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./browser.js": {
+            "node": "./node.js"
+          },
+          "./node.js": {
+            "browser": "./browser.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
+        }
+      },
+      "npm:inherits@2.0.3": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:ms@0.7.1": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
+      },
+      "npm:typescript@2.0.3": {
+        "browser": {},
+        "map": {
+          "buffer": "@empty",
+          "child_process": "@empty",
+          "fs": "@empty",
+          "path": "@empty",
+          "process": "@empty",
+          "readline": "@empty"
+        }
+      }
+    }
+  }
+}

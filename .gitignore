@@ -1,2 +1,6 @@
 dist
 node_modules
+jspm_packages
+index.js
+index.d.ts
+index.js.map
