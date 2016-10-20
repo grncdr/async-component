@@ -5,9 +5,7 @@ SystemJS.config({
       "ts-runtime": "npm:babel-runtime@5.8.38",
       "typescript": "npm:typescript@2.0.3",
       "core-js": "npm:core-js@1.2.7",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
-      "constants": "github:jspm/nodelibs-constants@0.2.0-alpha",
-      "vm": "github:jspm/nodelibs-vm@0.2.0-alpha"
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0"
     },
     "packages": {
       "npm:babel-runtime@5.8.38": {
@@ -74,6 +72,7 @@ SystemJS.config({
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
     "child_process": "github:jspm/nodelibs-child_process@0.2.0-alpha",
+    "constants": "github:jspm/nodelibs-constants@0.2.0-alpha",
     "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
     "domain": "github:jspm/nodelibs-domain@0.2.0-alpha",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
@@ -91,6 +90,7 @@ SystemJS.config({
     "ts": "github:frankwallis/plugin-typescript@5.2.7",
     "url": "github:jspm/nodelibs-url@0.2.0-alpha",
     "util": "github:jspm/nodelibs-util@0.2.0-alpha",
+    "vm": "github:jspm/nodelibs-vm@0.2.0-alpha",
     "zlib": "github:jspm/nodelibs-zlib@0.2.0-alpha"
   },
   packages: {
