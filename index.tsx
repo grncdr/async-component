@@ -5,7 +5,6 @@ export type ContextTypes = {[key: string]: Function}
 // type ContextTypes<Context> = {[key: keysof Context]: Function}
 
 
-
 export type ChildProps<SyncProps, AsyncProps> =
     SyncProps & { refresh: (clearState: boolean) => void } &
     ( { loading: true } |
@@ -31,13 +30,32 @@ const DEFAULT_CALLBACKS = {
     renderLoadingError: (error: Error) => <pre>{error.stack}</pre>
 }
 
-/*
-function defaultShouldReload<S extends {}>(ctx: any, nextProps: S, prevProps: S): boolean {
-    return nextProps != prevProps
+export type Provider<C, P> = {
+    new(): React.Component<P, void>
 }
-*/
 
-export default function makeDecorator<Context>(contextTypes: ContextTypes): Decorator<Context> {
+export default function init<C, P>(contextTypes: ContextTypes, getChildContext: (props: P) => C): { Provider: Provider<C, P>, connect: Decorator<C> } {
+    return {
+        Provider: makeProvider(contextTypes, getChildContext),
+        connect: makeDecorator(contextTypes)
+    }
+}
+
+export function makeProvider<Context, Props>(contextTypes: ContextTypes, getChildContext: (props: Props) => Context): Provider<Context, Props> {
+    return class Provider extends React.Component<Props, void> {
+        static childContextTypes = contextTypes
+
+        getChildContext() {
+            return getChildContext(this.props)
+        }
+
+        render() {
+            return React.Children.only(this.props.children || <div/>)
+        }
+    }
+}
+
+export function makeDecorator<Context>(contextTypes: ContextTypes): Decorator<Context> {
     return function<S, A>(WrappedComponent: LoadableComponent<Context, S, A>): Container<S, A> {
         const load = WrappedComponent.load
 
@@ -68,7 +86,6 @@ export default function makeDecorator<Context>(contextTypes: ContextTypes): Deco
             }
 
             forceReload = (clearState: boolean = true) => {
-                debugger
                 if (clearState) {
                     this.setState({ asyncProps: void(0), loadError: void(0) })
                 }
@@ -103,4 +120,3 @@ export default function makeDecorator<Context>(contextTypes: ContextTypes): Deco
         }
     }
 }
-

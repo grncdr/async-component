@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import asyncComponent, {Context} from '../decorators/asyncComponent.ts'
+import {connect, Context} from '../decorators/asyncComponent.ts'
 import {Props as AsyncProps} from 'react-async-component'
 import {Repo} from '../util/GitHubClient.ts'
 
@@ -8,14 +8,16 @@ import RepoLink from './RepoLink.tsx'
 
 type Props = AsyncProps<{ username: string }, { repos: Array<Repo> }>
 
-function delay<T>(v: T) {
+function delay<T>(v: T): Promise<T> {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, Math.random() * 1000 + 500, v)
     })
 }
 
 class UserRepos extends React.Component<Props, void> {
-    static load = ({gitHub}: Context, {username}: Props): Promise<typeof Props.async> => gitHub.getUserRepos(username).then(delay).then(repos => ({repos}))
+    static load ({gitHub}: Context, {username}: Props): Promise<typeof Props.async> {
+        return gitHub.getUserRepos(username).then(delay).then(repos => ({repos}))
+    }
 
     render() {
         const { username, loading, loadError, refresh } = this.props
@@ -38,4 +40,4 @@ class UserRepos extends React.Component<Props, void> {
     }
 }
 
-export default asyncComponent(UserRepos)
+export default connect(UserRepos)
