@@ -19,8 +19,10 @@
     "dependencies": {
       "@types/react": "npm:@types/react@^0.14.41",
       "@types/react-dom": "npm:@types/react-dom@^0.14.18",
+      "@types/rx": "npm:@types/rx@^2.5.33",
       "react-async-component": "local:react-async-component@1.0.0",
       "react-dom": "npm:react-dom@^15.3.2",
+      "rx": "npm:rx@^4.1.0",
       "ts": "github:frankwallis/plugin-typescript@^5.2.7"
     },
     "devDependencies": {

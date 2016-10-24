@@ -5,10 +5,10 @@
         "strictNullChecks": true,
         "module": "commonjs",
         "target": "es6",
-        "jsx": "react",
         "declaration": true
     },
     "include": [
-        "./index.tsx"
+        "typings.d.ts",
+        "index.ts"
     ]
 }

@@ -1,16 +1,18 @@
-import init from 'react-async-component'
+import init, {DecoratedProps} from 'react-async-component'
 import {PropTypes} from 'react'
 import GitHubClient from '../util/GitHubClient.ts'
 
-export type Context = {
+export type DecoratedProps<I, O> = DecoratedProps<I, O>
+
+export type Services = {
     gitHub: GitHubClient
 }
 
-const {Provider, connect} = init<Context, void>(
+const {Provider, connect} = init<Services, {}>(
     {
         gitHub: PropTypes.object
     },
-    (props: void) => {
+    (props: {}) => {
         return {
             gitHub: new GitHubClient()
         }

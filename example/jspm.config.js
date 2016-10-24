@@ -69,6 +69,7 @@ SystemJS.config({
   map: {
     "@types/react": "npm:@types/react@0.14.41",
     "@types/react-dom": "npm:@types/react-dom@0.14.18",
+    "@types/rx": "npm:@types/rx@2.5.33",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
     "child_process": "github:jspm/nodelibs-child_process@0.2.0-alpha",
@@ -85,6 +86,7 @@ SystemJS.config({
     "react": "npm:react@15.3.2",
     "react-async-component": "local:react-async-component@1.0.0",
     "react-dom": "npm:react-dom@15.3.2",
+    "rx": "npm:rx@4.1.0",
     "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
     "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
     "ts": "github:frankwallis/plugin-typescript@5.2.7",
